@@ -5,6 +5,8 @@ using UnityEngine;
 [RequireComponent(typeof(PlayerMotor))]
 public class PlayerController : MonoBehaviour
 {
+    private Interactable _focus;
+
     public LayerMask MovementMask;
 
     [SerializeField]
@@ -42,7 +44,11 @@ public class PlayerController : MonoBehaviour
 
             if (Physics.Raycast(ray, out hit, rangeOfHit))
             {
-                //Check if interactable
+                var interactable = hit.collider.GetComponent<Interactable>();
+                if (interactable != null)
+                {
+                    SetFocus(interactable);
+                }
             }
         }
     }
@@ -61,8 +67,31 @@ public class PlayerController : MonoBehaviour
             {
                 _motor.MoveToPoint(hit.point);
 
-                //Stop focus
+                RemoveFocus();
             }
         }
+    }
+
+    void SetFocus(Interactable newFocus)
+    {
+        if (newFocus != _focus)
+        {
+            if (_focus != null)
+                _focus.OnDefocused();
+
+            _focus = newFocus;
+            _motor.FollowTarget(_focus);
+        }
+
+        _focus.OnFocused(transform);
+    }
+
+    void RemoveFocus()
+    {
+        if (_focus != null)
+            _focus.OnDefocused();
+
+        _focus = null;
+        _motor.StopFollowingTarget();
     }
 }
