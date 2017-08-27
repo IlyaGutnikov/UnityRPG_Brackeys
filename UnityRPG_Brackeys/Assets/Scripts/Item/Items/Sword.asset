@@ -9,8 +9,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 96ea86ac126cfe942ad1270554012665, type: 3}
-  m_Name: Helmet
+  m_Name: Sword
   m_EditorClassIdentifier: 
-  Name: Helmet
-  Icon: {fileID: 21300000, guid: 58b2f0c4df7e033448bc6b4a1cf03c02, type: 3}
+  Name: Sword
+  Icon: {fileID: 21300000, guid: 238a6c1c47317a14d9d04bebfb426999, type: 3}
   IsDefaultItem: 0

@@ -6,9 +6,10 @@ public class Inventory : MonoBehaviour
 {
     public static Inventory Instanse;
 
-    public int Slots = 20;
+    public int Slots = 16;
 
-    private List<Item> _items = new List<Item>();
+    [HideInInspector]
+    public List<Item> Items = new List<Item>();
 
     public delegate void OnItemChanged();
 
@@ -29,13 +30,13 @@ public class Inventory : MonoBehaviour
     {
         if (!item.IsDefaultItem)
         {
-            if (_items.Count >= Slots)
+            if (Items.Count >= Slots)
             {
                 Debug.Log("Inventory is full");
                 return false;
             }
 
-            _items.Add(item);
+            Items.Add(item);
 
             if (OnItemChangedCallback != null)
             {
@@ -48,7 +49,7 @@ public class Inventory : MonoBehaviour
 
     public void RemoveItem(Item item)
     {
-        _items.Remove(item);
+        Items.Remove(item);
 
         if (OnItemChangedCallback != null)
         {

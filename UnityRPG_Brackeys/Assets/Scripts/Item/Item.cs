@@ -8,5 +8,8 @@ public class Item : ScriptableObject
     public Sprite Icon = null;
     public bool IsDefaultItem = false;
 
-
+    public virtual void Use()
+    {
+        Debug.Log("Using item " + name);
+    }
 }
