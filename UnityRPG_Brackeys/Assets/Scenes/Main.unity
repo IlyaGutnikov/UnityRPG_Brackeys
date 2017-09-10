@@ -441,7 +441,7 @@ GameObject:
   - component: {fileID: 160803207}
   - component: {fileID: 160803211}
   m_Layer: 0
-  m_Name: TestItem
+  m_Name: Helmet of Protection
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -524,7 +524,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Radius: 3
   InteractionTransform: {fileID: 160803210}
-  Item: {fileID: 11400000, guid: de52207fa9035594f8bb5e9a7da6f328, type: 2}
+  Item: {fileID: 11400000, guid: 1ba1153ef482e2b4da52170e5cbe53b5, type: 2}
 --- !u!1 &203370218
 GameObject:
   m_ObjectHideFlags: 0
@@ -538,7 +538,7 @@ GameObject:
   - component: {fileID: 203370220}
   - component: {fileID: 203370219}
   m_Layer: 0
-  m_Name: TestItem (1)
+  m_Name: Helmet of Fire
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -557,7 +557,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Radius: 3
   InteractionTransform: {fileID: 203370223}
-  Item: {fileID: 11400000, guid: 68663c48474f0ea4ca1ce1b672ade7df, type: 2}
+  Item: {fileID: 11400000, guid: 07c4515a40a9e7344a0abc59d86139e8, type: 2}
 --- !u!23 &203370220
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -4587,6 +4587,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1701762896}
   - component: {fileID: 1701762897}
+  - component: {fileID: 1701762898}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -4620,6 +4621,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Slots: 20
   Items: []
+--- !u!114 &1701762898
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1701762895}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86c1a1592294f79489187e7fdf4a6a54, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1725521215
 Prefab:
   m_ObjectHideFlags: 0
