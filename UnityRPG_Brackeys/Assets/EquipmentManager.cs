@@ -14,7 +14,10 @@ public class EquipmentManager : MonoBehaviour
 	    Instance = this;
 	}
 
+    public SkinnedMeshRenderer TargetMesh;
+
     private Equipment[] currentEquipments;
+    private SkinnedMeshRenderer[] currentMeshRenderers;
 
     public delegate void OnEquipmentChange(Equipment newItem, Equipment oldItem);
 
@@ -22,8 +25,9 @@ public class EquipmentManager : MonoBehaviour
 
     void Start()
     {
-        var intOfSlots = Enum.GetNames(typeof(EquipmentSlot)).Length;
-        currentEquipments = new Equipment[intOfSlots];
+        var numOfSlots = Enum.GetNames(typeof(EquipmentSlot)).Length;
+        currentEquipments = new Equipment[numOfSlots];
+        currentMeshRenderers = new SkinnedMeshRenderer[numOfSlots];
     }
 
     public void Equip(Equipment newEquipment)
@@ -43,6 +47,12 @@ public class EquipmentManager : MonoBehaviour
         }
 
         currentEquipments[slotIndex] = newEquipment;
+        SkinnedMeshRenderer newMesh = Instantiate<SkinnedMeshRenderer>(newEquipment.MeshRenderer);
+        newMesh.transform.parent = TargetMesh.transform;
+
+        newMesh.bones = TargetMesh.bones;
+        newMesh.rootBone = TargetMesh.rootBone;
+        currentMeshRenderers[slotIndex] = newMesh;
     }
 
     public void Unequip(int slotIndex)
@@ -51,6 +61,13 @@ public class EquipmentManager : MonoBehaviour
         {
            return; 
         }
+
+        if (currentMeshRenderers[slotIndex] == null)
+        {
+            return;
+        }
+
+        Destroy(currentMeshRenderers[slotIndex].gameObject);
 
         var oldItem = currentEquipments[slotIndex];
         Inventory.Instanse.AddItem(oldItem);

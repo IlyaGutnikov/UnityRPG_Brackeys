@@ -6,6 +6,8 @@ using UnityEngine;
 public class Equipment : Item
 {
     public EquipmentSlot EquipmentSlot;
+    public SkinnedMeshRenderer MeshRenderer;
+    public EquipmentMeshRegions[] CoveredMeshRegiones;
 
     public int ArmorModifier;
     public int DamageModifier;

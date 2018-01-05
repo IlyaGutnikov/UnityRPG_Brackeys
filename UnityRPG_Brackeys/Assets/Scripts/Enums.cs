@@ -7,3 +7,10 @@
     Weapon,
     Shield
 }
+
+public enum EquipmentMeshRegions
+{
+    Legs,
+    Arms,
+    Torso
+}

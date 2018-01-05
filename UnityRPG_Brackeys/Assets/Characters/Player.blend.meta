@@ -3,7 +3,7 @@ guid: 73be9633513854604baae3aa06041436
 timeCreated: 1502628811
 licenseType: Free
 ModelImporter:
-  serializedVersion: 21
+  serializedVersion: 22
   fileIDToRecycleName:
     100000: Armature
     100002: Chest
@@ -37,6 +37,14 @@ ModelImporter:
     100058: Upper_Arm_R
     100060: Upper_Leg_L
     100062: Upper_Leg_R
+    100064: Body
+    100066: Hair
+    100068: Helmet
+    100070: Pants
+    100072: Platebody
+    100074: Platelegs
+    100076: Shirt
+    100078: Shoes
     400000: Armature
     400002: Chest
     400004: Cube
@@ -69,17 +77,88 @@ ModelImporter:
     400058: Upper_Arm_R
     400060: Upper_Leg_L
     400062: Upper_Leg_R
+    400064: Body
+    400066: Hair
+    400068: Helmet
+    400070: Pants
+    400072: Platebody
+    400074: Platelegs
+    400076: Shirt
+    400078: Shoes
     4300000: Cube
+    4300002: Helmet
+    4300004: Platebody
+    4300006: Platelegs
+    4300008: Hair
+    4300010: Shoes
+    4300012: Shirt
+    4300014: Pants
+    4300016: Body
     7400000: Default Take
     7400002: Idle
     7400004: Run
     7400006: Walk
     9500000: //RootNode
     13700000: Cube
+    13700002: Body
+    13700004: Hair
+    13700006: Helmet
+    13700008: Pants
+    13700010: Platebody
+    13700012: Platelegs
+    13700014: Shirt
+    13700016: Shoes
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Black
+    second: {fileID: 2100000, guid: 9629dca6bc80dba46a22a1d44aaf00d5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Hair
+    second: {fileID: 2100000, guid: 72b8a667dd5b2584f824beeebae31488, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Metal
+    second: {fileID: 2100000, guid: 4858d29f71bd0fb4ab977b0f1aeee770, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Metal_dark
+    second: {fileID: 2100000, guid: 61d1f0d55fbcd5c49a74ea09125b4218, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Pants
+    second: {fileID: 2100000, guid: 18ebc963bb3935047a4a0afb5a84f182, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Shirt
+    second: {fileID: 2100000, guid: 57c7b01297a884e43a07185865fef7bc, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Shoe
+    second: {fileID: 2100000, guid: 81234326b2e163042a471b0a013124ce, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Skin
+    second: {fileID: 2100000, guid: 0d411a50310e7c7499fd46d2169e5d02, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Underclothes
+    second: {fileID: 2100000, guid: 54707701190f2934999d6a0145fd20d3, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
     materialSearch: 1
+    materialLocation: 0
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
@@ -100,6 +179,7 @@ ModelImporter:
       has scale animation that will be discarded.\n"
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
     animationCompression: 3
     animationRotationError: 0.5
     animationPositionError: 0.5
