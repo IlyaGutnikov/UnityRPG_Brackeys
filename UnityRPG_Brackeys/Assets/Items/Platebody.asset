@@ -9,13 +9,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4409993aed433334f98d41566b95d1f4, type: 3}
-  m_Name: Shirt
+  m_Name: Platebody
   m_EditorClassIdentifier: 
-  Name: Shirt
-  Icon: {fileID: 0}
-  IsDefaultItem: 1
+  Name: Platebody
+  Icon: {fileID: 21300000, guid: ba5366f5552d2c24b91efa0c5b7308d0, type: 3}
+  IsDefaultItem: 0
   EquipmentSlot: 1
-  MeshRenderer: {fileID: 137183537882170948, guid: e83163834972fd946a234cf3c9e52cf2,
+  MeshRenderer: {fileID: 137230129968196384, guid: 0ac0b5116bd8864428945736d127dcdc,
     type: 2}
   CoveredMeshRegiones: 0100000002000000
   ArmorModifier: 0

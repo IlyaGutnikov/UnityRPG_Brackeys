@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class EquipmentManager : MonoBehaviour
 {
-
     public static EquipmentManager Instance;
 
 	// Use this for initialization
@@ -15,6 +15,7 @@ public class EquipmentManager : MonoBehaviour
 	}
 
     public SkinnedMeshRenderer TargetMesh;
+    public Equipment[] DefaultItems;
 
     private Equipment[] currentEquipments;
     private SkinnedMeshRenderer[] currentMeshRenderers;
@@ -28,23 +29,21 @@ public class EquipmentManager : MonoBehaviour
         var numOfSlots = Enum.GetNames(typeof(EquipmentSlot)).Length;
         currentEquipments = new Equipment[numOfSlots];
         currentMeshRenderers = new SkinnedMeshRenderer[numOfSlots];
+
+        EquipDefaultItems();
     }
 
     public void Equip(Equipment newEquipment)
     {
         int slotIndex = (int) newEquipment.EquipmentSlot;
-
-        Equipment oldItem = null;
-        if (currentEquipments[slotIndex] != null)
-        {
-            oldItem = currentEquipments[slotIndex];
-            Inventory.Instanse.AddItem(oldItem);
-        }
+        var oldItem = Unequip(slotIndex);
 
         if (OnEquipmentChanged != null)
         {
             OnEquipmentChanged.Invoke(newEquipment, oldItem);
         }
+
+        SetEquipmentBlendShapes(newEquipment, 100);
 
         currentEquipments[slotIndex] = newEquipment;
         SkinnedMeshRenderer newMesh = Instantiate<SkinnedMeshRenderer>(newEquipment.MeshRenderer);
@@ -55,21 +54,22 @@ public class EquipmentManager : MonoBehaviour
         currentMeshRenderers[slotIndex] = newMesh;
     }
 
-    public void Unequip(int slotIndex)
+    public Equipment Unequip(int slotIndex)
     {
         if (currentEquipments[slotIndex] == null)
         {
-           return; 
+           return null; 
         }
 
         if (currentMeshRenderers[slotIndex] == null)
         {
-            return;
+            return null;
         }
 
         Destroy(currentMeshRenderers[slotIndex].gameObject);
 
         var oldItem = currentEquipments[slotIndex];
+        SetEquipmentBlendShapes(oldItem, 0);
         Inventory.Instanse.AddItem(oldItem);
 
         if (OnEquipmentChanged != null)
@@ -78,13 +78,38 @@ public class EquipmentManager : MonoBehaviour
         }
 
         currentEquipments[slotIndex] = null;
+
+        return oldItem;
     }
 
     public void UnequipAll()
     {
+        if (currentEquipments != null && currentEquipments.All(x => x.IsDefaultItem))
+        {
+            return;
+        }
+
         for (int i = 0; i < currentEquipments.Length; i++)
         {
             Unequip(i);
+        }
+
+        EquipDefaultItems();
+    }
+
+    private void SetEquipmentBlendShapes(Equipment item, int weight)
+    {
+        foreach (var equipmentMeshRegion in item.CoveredMeshRegiones)
+        {
+            TargetMesh.SetBlendShapeWeight((int) equipmentMeshRegion, weight);
+        }
+    }
+
+    private void EquipDefaultItems()
+    {
+        foreach (var equipment in DefaultItems)
+        {
+            Equip(equipment);
         }
     }
 

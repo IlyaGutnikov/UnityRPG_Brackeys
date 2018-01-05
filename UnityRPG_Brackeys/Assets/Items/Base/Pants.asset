@@ -13,8 +13,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Pants
   Icon: {fileID: 0}
-  IsDefaultItem: 0
+  IsDefaultItem: 1
   EquipmentSlot: 2
-  MeshRenderer: {fileID: 0}
+  MeshRenderer: {fileID: 137005622892825386, guid: 92cff4f733ac5394a9cc7cff9103281b,
+    type: 2}
+  CoveredMeshRegiones: 00000000
   ArmorModifier: 0
   DamageModifier: 0

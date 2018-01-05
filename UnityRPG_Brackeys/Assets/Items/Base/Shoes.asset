@@ -13,8 +13,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Shoes
   Icon: {fileID: 0}
-  IsDefaultItem: 0
-  EquipmentSlot: 0
-  MeshRenderer: {fileID: 0}
+  IsDefaultItem: 1
+  EquipmentSlot: 3
+  MeshRenderer: {fileID: 137328633797350438, guid: 3f4e7683e7bc6af4dac6f1da3ec1edf3,
+    type: 2}
+  CoveredMeshRegiones: 
   ArmorModifier: 0
   DamageModifier: 0
