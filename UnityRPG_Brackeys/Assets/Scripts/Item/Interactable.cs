@@ -24,7 +24,7 @@ public class Interactable : MonoBehaviour {
         _hasInteracted = false;
     }
 
-    public virtual void Interract()
+    public virtual void Interact()
     {
         Debug.Log("Interact with " + transform.name);
     }
@@ -37,7 +37,7 @@ public class Interactable : MonoBehaviour {
 
             if (distance <= Radius)
             {
-                Interract();
+                Interact();
                 _hasInteracted = true;
             }
         }
