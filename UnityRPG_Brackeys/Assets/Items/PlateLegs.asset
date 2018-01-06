@@ -18,5 +18,5 @@ MonoBehaviour:
   MeshRenderer: {fileID: 137174341673487834, guid: 93d27bf922cfd9f4d8d3d73729840abf,
     type: 2}
   CoveredMeshRegiones: 00000000
-  ArmorModifier: 0
+  ArmorModifier: 1
   DamageModifier: 0

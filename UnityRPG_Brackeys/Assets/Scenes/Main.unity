@@ -1484,11 +1484,6 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 137543463281339908, guid: 8ffa19367da7a4c48b650a46db7f849c,
-        type: 2}
-      propertyPath: m_BlendShapeWeights.Array.size
-      value: 3
-      objectReference: {fileID: 0}
     - target: {fileID: 4150157294530644, guid: 8ffa19367da7a4c48b650a46db7f849c, type: 2}
       propertyPath: m_LocalPosition.x
       value: -12.19
@@ -1521,24 +1516,31 @@ Prefab:
       propertyPath: m_RootOrder
       value: 4
       objectReference: {fileID: 0}
-    - target: {fileID: 137543463281339908, guid: 8ffa19367da7a4c48b650a46db7f849c,
-        type: 2}
-      propertyPath: m_BlendShapeWeights.Array.data[0]
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 137543463281339908, guid: 8ffa19367da7a4c48b650a46db7f849c,
-        type: 2}
-      propertyPath: m_BlendShapeWeights.Array.data[1]
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 137543463281339908, guid: 8ffa19367da7a4c48b650a46db7f849c,
-        type: 2}
-      propertyPath: m_BlendShapeWeights.Array.data[2]
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 114336096401321836, guid: 8ffa19367da7a4c48b650a46db7f849c, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 8ffa19367da7a4c48b650a46db7f849c, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &648149095 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1734754215553188, guid: 8ffa19367da7a4c48b650a46db7f849c,
+    type: 2}
+  m_PrefabInternal: {fileID: 648149094}
+--- !u!114 &648149096
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 648149095}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c05ff382f18862142b339efc17937b9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MaxHealth: 100
+  Damage:
+    _baseValue: 0
+  Armor:
+    _baseValue: 0
 --- !u!1001 &659751227
 Prefab:
   m_ObjectHideFlags: 0

@@ -431,6 +431,7 @@ GameObject:
   - component: {fileID: 114360584819905840}
   - component: {fileID: 114506653908141122}
   - component: {fileID: 114275109080597942}
+  - component: {fileID: 114336096401321836}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -1019,6 +1020,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69d1962cfd5a5e043ad4a569e107cb85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114336096401321836
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1734754215553188}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef062b211026a754ba653652ab3574e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MaxHealth: 100
+  Damage:
+    _baseValue: 2
+  Armor:
+    _baseValue: 0
 --- !u!114 &114360584819905840
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1127,7 +1144,10 @@ SkinnedMeshRenderer:
   - {fileID: 4679376903285330}
   - {fileID: 4020260763206880}
   - {fileID: 4492944365611262}
-  m_BlendShapeWeights: []
+  m_BlendShapeWeights:
+  - 0
+  - 0
+  - 0
   m_RootBone: {fileID: 4569031682941858}
   m_AABB:
     m_Center: {x: 0.029539347, y: 0.0008055568, z: -0.009711459}
